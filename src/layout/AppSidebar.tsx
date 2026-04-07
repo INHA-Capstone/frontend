@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState,useCallback } from "react";
+import { BrandWordmark } from "@/components/common/BrandWordmark";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 import {
@@ -10,11 +10,8 @@ import {
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  ListIcon,
-  PageIcon,
   PieChartIcon,
   PlugInIcon,
-  TableIcon,
   UserCircleIcon,
 } from "../icons/index";
 import SidebarWidget from "./SidebarWidget";
@@ -41,25 +38,6 @@ const navItems: NavItem[] = [
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
-  },
-
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
   },
 ];
 
@@ -308,31 +286,20 @@ const AppSidebar: React.FC = () => {
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
         }`}
       >
-        <Link href="/">
+        <Link
+          href="/"
+          title="견(犬)적서"
+          aria-label={
+            isExpanded || isHovered || isMobileOpen
+              ? undefined
+              : "견(犬)적서"
+          }
+          className="inline-flex items-center rounded-xl transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/35 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+        >
           {isExpanded || isHovered || isMobileOpen ? (
-            <>
-              <Image
-                className="dark:hidden"
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-              <Image
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-            </>
+            <BrandWordmark variant="sidebar-expanded" />
           ) : (
-            <Image
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            <BrandWordmark variant="sidebar-collapsed" />
           )}
         </Link>
       </div>

@@ -5,6 +5,7 @@
 @theme {
   --font-*: initial;
   --font-outfit: Outfit, sans-serif;
+  --font-brand-wordmark: var(--font-brand-sans-kr), var(--font-outfit);
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;
