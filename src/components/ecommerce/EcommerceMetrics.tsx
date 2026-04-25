@@ -15,15 +15,15 @@ export const EcommerceMetrics = () => {
         <div className="flex items-end justify-between mt-5">
           <div>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Customers
+              반려견 체중
             </span>
             <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              3,782
+              7.8kg
             </h4>
           </div>
           <Badge color="success">
             <ArrowUpIcon />
-            11.01%
+            0.2kg
           </Badge>
         </div>
       </div>
@@ -37,16 +37,17 @@ export const EcommerceMetrics = () => {
         <div className="flex items-end justify-between mt-5">
           <div>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Orders
+              오늘 사료 섭취량
             </span>
             <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              5,359
+              185g
             </h4>
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">520 kcal</p>
           </div>
 
           <Badge color="error">
             <ArrowDownIcon className="text-error-500" />
-            9.05%
+            9.0%
           </Badge>
         </div>
       </div>
